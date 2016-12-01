@@ -49,5 +49,19 @@ $ time ./exe echo ""
 real    0m0.415s
 user    0m0.008s
 sys     0m0.004s
-23:56 $
+$
 ```
+
+## コード等の置き場
+
+`./volumes/app` にコード、npmパッケージ一式を置いてください。
+デフォルトで `./volumes/app` がカレントディレクトリにマウントされています。
+
+たとえば、以下を実行すると:
+
+```bash
+$ ./exe npm install --save <package>
+```
+
+`./volumes/app/node_modules` にパッケージがインストールされます。
+
