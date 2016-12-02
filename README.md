@@ -1,5 +1,7 @@
 # Riot.js を簡単に試すための Docker イメージ
 
+ホストPCに開発に必要なソフトウェアをインストールしなくても、Riot.js + Node.jsを使用したアプリを開発できるようにするDockerイメージです。
+
 ## 使用条件
 
 docker、docker-compose がインストールされていること。
@@ -52,7 +54,27 @@ sys     0m0.004s
 $
 ```
 
-## コード等の置き場
+## インストール済みのソフトウェアモジュール
+
+* Node.js
+
+    ```bash
+    $ ./exe node -v
+    v7.2.0
+    $ ./exe npm -v
+    3.10.9
+    ```
+
+* Riot.js
+
+    ```bash
+    $ ./exe riot -v
+
+    riot-cli:      3.0.0 - https://github.com/riot/cli
+    riot-compiler: 3.0.0 - https://github.com/riot/compiler
+    ```
+
+## アプリのコード等の置き場
 
 `./volumes/app` にコード、npmパッケージ一式を置いてください。
 デフォルトで `./volumes/app` がカレントディレクトリにマウントされています。
