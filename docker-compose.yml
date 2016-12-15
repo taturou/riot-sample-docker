@@ -5,4 +5,4 @@ services:
     build: app
     command: bash
     volumes:
-     - ./volumes/app:/root/app
+     - ./:/root/app
