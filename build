@@ -1,0 +1,2 @@
+#!/bin/bash
+./dexe npm run build

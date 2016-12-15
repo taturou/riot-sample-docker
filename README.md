@@ -19,20 +19,50 @@ docker-compose.yml version2 以降が使えればOK。
 $ git clone https://github.com/taturou/riot-sample-docker.git
 $ cd riot-sample-docker
 $ docker-compose build
+$ ./dexe npm install
+```
+
+## サーバ実行
+
+デフォルトで、以下のサーバを起動します。
+
+* ポート 3000 で待ち受ける
+* カレントディレクトリのHTMLを表示する
+
+このサーバは Bowser-sync で動いています。
+
+### 起動
+
+以下のコマンドでサーバを起動してバックグラウンドで常駐します。
+
+```bash
+$ docker-compose up -d
+```
+
+### 終了
+
+```bash
+$ docker-compose down
 ```
 
 ## コマンド実行
 
+docker 内で任意のコマンドを実行するための shell script を用意しています。
+2種類あります。
+
+### cexe
+
+docker-composeによりサーバを起動中は `cexe` を使用します。
 以下で、docker 内で任意のコマンド <command> を実行します。
 
 ```bash
-$ ./exe <command> <args>
+$ ./cexe <command> <args>
 ```
 
 例)
 
 ```bash
-$ ./exe riot -v
+$ ./cexe riot -v
 
   riot-cli:      3.0.0 - https://github.com/riot/cli
   riot-compiler: 3.0.0 - https://github.com/riot/compiler
@@ -40,12 +70,45 @@ $ ./exe riot -v
 $
 ```
 
+### dexe
+
+サーバを起動していないときは `dexe` を使用します。
+以下で、docker 内で任意のコマンド <command> を実行します。
+
+```bash
+$ ./dexe <command> <args>
+```
+
+## インストール済みのソフトウェアモジュール
+
+* Node.js
+
+    ```bash
+    $ ./dexe node -v
+    v7.2.0
+    $ ./dexe npm -v
+    3.10.9
+    ```
+
+* Riot.js
+
+    ```bash
+    $ ./dexe riot -v
+
+    riot-cli:      3.0.0 - https://github.com/riot/cli
+    riot-compiler: 3.0.0 - https://github.com/riot/compiler
+    ```
+
+### pexe
+
+`dexe` に加えて、ポート番号 3000 を listen します。
+
 ### dumb-init
 
 初期プロセスに dumb-init を使用しているので、コマンド終了直後にホストのシェルに戻ってきます。
 
 ```bash
-$ time ./exe echo ""
+$ time ./dexe echo ""
 
 
 real    0m0.415s
@@ -54,36 +117,14 @@ sys     0m0.004s
 $
 ```
 
-## インストール済みのソフトウェアモジュール
-
-* Node.js
-
-    ```bash
-    $ ./exe node -v
-    v7.2.0
-    $ ./exe npm -v
-    3.10.9
-    ```
-
-* Riot.js
-
-    ```bash
-    $ ./exe riot -v
-
-    riot-cli:      3.0.0 - https://github.com/riot/cli
-    riot-compiler: 3.0.0 - https://github.com/riot/compiler
-    ```
-
 ## アプリのコード等の置き場
 
-`./volumes/app` にコード、npmパッケージ一式を置いてください。
-デフォルトで `./volumes/app` がカレントディレクトリにマウントされています。
-
+カレントディレクトリにコード、npmパッケージ一式を置いてください。
 たとえば、以下を実行すると:
 
 ```bash
-$ ./exe npm install --save <package>
+$ ./dexe npm install --save <package>
 ```
 
-`./volumes/app/node_modules` にパッケージがインストールされます。
+`./node_modules` にパッケージがインストールされます。
 

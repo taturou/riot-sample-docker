@@ -1,0 +1,23 @@
+{
+  "name": "riot-sample",
+  "version": "1.0.0",
+  "description": "This is sample for Riot.js",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "server": "browser-sync start --files 'dist/*, styles/*, index.html' --server"
+  },
+  "author": "taturou <taturou@gmail.com>",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "postcss": "^5.2.6",
+    "postcss-cssnext": "^2.9.0",
+    "rollup": "^0.37.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-riot": "^1.1.0"
+  },
+  "dependencies": {
+    "riot": "^3.0.4"
+  }
+}
