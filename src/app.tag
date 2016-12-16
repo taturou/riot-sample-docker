@@ -1,5 +1,16 @@
 <app>
-  <h1>{ content }</h1>
+  <h1>Riot.js OBSERIOT</h1>
+
+  <div>
+    <my-button></my-button>
+    =
+    <my-output></my-output>
+  </div>
+  <div>
+    <my-button></my-button>
+    =
+    <my-output></my-output>
+  </div>
 
   <script>
     const str = 'Riot.js';

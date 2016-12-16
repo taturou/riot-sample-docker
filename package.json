@@ -10,6 +10,7 @@
   "author": "taturou <taturou@gmail.com>",
   "devDependencies": {
     "browser-sync": "^2.18.5",
+    "obseriot": "^0.3.5",
     "postcss": "^5.2.6",
     "postcss-cssnext": "^2.9.0",
     "riot-cli": "^3.0.0",
