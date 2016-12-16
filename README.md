@@ -48,7 +48,7 @@ $ docker-compose down
 ## コマンド実行
 
 docker 内で任意のコマンドを実行するための shell script を用意しています。
-2種類あります。
+3種類あります。
 
 ### cexe
 
@@ -62,11 +62,8 @@ $ ./cexe <command> <args>
 例)
 
 ```bash
-$ ./cexe riot -v
-
-  riot-cli:      3.0.0 - https://github.com/riot/cli
-  riot-compiler: 3.0.0 - https://github.com/riot/compiler
-
+$ ./cexe node -v
+v7.2.1
 $
 ```
 
@@ -79,43 +76,48 @@ $
 $ ./dexe <command> <args>
 ```
 
+例)
+
+```bash
+$ ./dexe npm riot -v
+3.10.10
+$
+```
+
+### pexe
+
+`dexe` に加えて、ポート番号 3000 を listen します。
+
+例)
+
+```bash
+$ ./pexe npm run server
+```
+
 ## インストール済みのソフトウェアモジュール
 
 * Node.js
 
     ```bash
     $ ./dexe node -v
-    v7.2.0
+    v7.2.1
     $ ./dexe npm -v
-    3.10.9
+    3.10.10
     ```
 
-* Riot.js
+* dumb-init
+
+    初期プロセスに dumb-init を使用しているので、コマンド終了直後にホストのシェルに戻ってきます。
 
     ```bash
-    $ ./dexe riot -v
+    $ time ./dexe echo ""
 
-    riot-cli:      3.0.0 - https://github.com/riot/cli
-    riot-compiler: 3.0.0 - https://github.com/riot/compiler
+
+    real    0m0.415s
+    user    0m0.008s
+    sys     0m0.004s
+    $
     ```
-
-### pexe
-
-`dexe` に加えて、ポート番号 3000 を listen します。
-
-### dumb-init
-
-初期プロセスに dumb-init を使用しているので、コマンド終了直後にホストのシェルに戻ってきます。
-
-```bash
-$ time ./dexe echo ""
-
-
-real    0m0.415s
-user    0m0.008s
-sys     0m0.004s
-$
-```
 
 ## アプリのコード等の置き場
 
