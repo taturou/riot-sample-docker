@@ -39,10 +39,21 @@ $ ./dexe npm install
 $ docker-compose up -d
 ```
 
+Webブラウザで `http://localhost:3000` にアクセスしてください。
+
 ### 終了
 
 ```bash
 $ docker-compose down
+```
+
+## ビルド
+
+`src/` を元に `dist/app.js` を生成します。
+バンドラに rollup.js を使用しています。
+
+```bash
+$ ./build
 ```
 
 ## コマンド実行
@@ -129,4 +140,8 @@ $ ./dexe npm install --save <package>
 ```
 
 `./node_modules` にパッケージがインストールされます。
+
+## サンプル
+
+ブランチにサンプルコードを作っています。
 
