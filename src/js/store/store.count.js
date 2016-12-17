@@ -3,16 +3,16 @@ import action from '../../lib/action'
 import obseriot from 'obseriot';
 
 store.count = {
-  state: {total: 0},
+  total: 0,
   handler: {
     name: 'store_count',
     action: () => {
-      return [ store.count.state.total ];
+      return [ store.count.total ];
     }
   }
 }
 
 obseriot.listen(action.increment, (num) => {
-    store.count.state.total = store.count.state.total + num;
+    store.count.total = store.count.total + num;
     obseriot.notify( store.count );
 })

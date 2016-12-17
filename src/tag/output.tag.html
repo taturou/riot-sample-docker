@@ -4,12 +4,12 @@
   <script>
     import store from '../lib/store'
     import obseriot from 'obseriot';
+    let tag = this;
+    tag.total = 0;
 
-    this.total = 0;
-
-    obseriot.listen(store.count, (state) => {
-      this.total = state.total;
-      this.update();
+    obseriot.listen(store.count, (total) => {
+      tag.total = total;
+      tag.update();
     });
   </script>
 

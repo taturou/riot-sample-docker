@@ -6,11 +6,12 @@ import postcss_cssnext from 'postcss-cssnext';
 import multi_entry from 'rollup-plugin-multi-entry'
 
 export default {
-  entry: ['src/main.js'],
+  entry: [ 'src/js/**/*.js', 'src/tag/**/*.tag', 'src/main.js' ],
   dest: 'dist/bundle.js',
   format: 'es',
   plugins: [
     riot({
+      ext: 'html',
       parsers: {
         css: { cssnext }
       }
