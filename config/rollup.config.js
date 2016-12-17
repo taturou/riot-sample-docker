@@ -3,19 +3,23 @@ import node_resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import postcss from 'postcss';
 import postcss_cssnext from 'postcss-cssnext';
+import multi_entry from 'rollup-plugin-multi-entry'
 
 export default {
-  entry: 'src/main.js',
-  dest: 'dist/app.js',
+  entry: ['src/main.js'],
+  dest: 'dist/bundle.js',
   format: 'es',
   plugins: [
-    node_resolve({
-      jsnext: true
-    }),
     riot({
       parsers: {
         css: { cssnext }
       }
+    }),
+    node_resolve({
+      jsnext: true
+    }),
+    multi_entry({
+      exports: false
     })
   ]
 };

@@ -1,6 +1,6 @@
 import riot from 'riot';
-import './app.tag';
-import './button.tag';
-import './output.tag';
+import './tag/app.tag';
+import './tag/button.tag';
+import './tag/output.tag';
 
 riot.mount('app');
