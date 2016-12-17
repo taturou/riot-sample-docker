@@ -4,7 +4,7 @@
   "description": "This is sample for Riot.js",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c config/rollup.config.js",
     "server": "browser-sync start --files 'dist/*, styles/*, index.html' --server"
   },
   "author": "taturou <taturou@gmail.com>",
