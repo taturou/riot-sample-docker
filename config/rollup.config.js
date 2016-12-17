@@ -4,6 +4,7 @@ import replace from 'rollup-plugin-replace';
 import postcss from 'postcss';
 import postcss_cssnext from 'postcss-cssnext';
 import multi_entry from 'rollup-plugin-multi-entry'
+import eslint from 'rollup-plugin-eslint';
 
 export default {
   entry: [ 'src/js/**/*.js', 'src/tag/**/*.tag', 'src/main.js' ],
@@ -21,7 +22,8 @@ export default {
     }),
     multi_entry({
       exports: false
-    })
+    }),
+    eslint()
   ]
 };
 
