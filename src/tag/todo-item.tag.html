@@ -1,0 +1,27 @@
+<todo-item>
+  <div>
+    <input type="checkbox" onclick={ check }>
+    <span>(#{ item.id })</span>
+    <span refs="content" class={ completed: item.done }>{ item.content }</span>
+  </div>
+
+  <script>
+    import action from '../lib/action'
+    import obseriot from 'obseriot';
+
+    let tag = this;
+    tag.item = tag.opts.item;
+    tag.check = check;
+
+    function check(e) {
+      tag.item.done = e.target.checked;
+      obseriot.notify(action.todo.item.update, tag.item);
+    }
+  </script>
+
+  <style>
+    .completed {
+      text-decoration: line-through
+    }
+  </style>
+</todo-item>

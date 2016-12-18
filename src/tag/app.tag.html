@@ -1,0 +1,26 @@
+<app>
+  <h1>Riot.js TODO</h1>
+
+  <div>
+    <todo-list></todo-list>
+  </div>
+  <div>
+    <todo-input></todo-input>
+  </div>
+
+  <script>
+    let tag = this;
+
+    const str = 'Riot.js';
+    tag.content = `Hello ${str}`;
+  </script>
+
+  <style>
+    :scope {
+      --riot-color: gray;
+    }
+    h1 {
+      color: var(--riot-color);
+    }
+  </style>
+</app>

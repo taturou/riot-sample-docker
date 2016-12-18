@@ -1,0 +1,20 @@
+<todo-list>
+  <virtual each={ item in items }>
+    <todo-item item={ item }></todo-item>
+  </virtual>
+
+  <script>
+    import store from '../lib/store'
+    import obseriot from 'obseriot';
+    let tag = this;
+    tag.items = [];
+
+    obseriot.listen(store.todo.added, (items, item) => {
+      tag.items = items;
+      tag.update();
+    });
+  </script>
+
+  <style>
+  </style>
+</todo-list>

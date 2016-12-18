@@ -1,0 +1,32 @@
+<todo-input>
+  <form onsubmit={ add }>
+    <input ref="input" onkeyup={ keyup }>
+    <button disabled={ disabled }>Add</button>
+  </form>
+
+  <script>
+    import action from '../lib/action'
+    import obseriot from 'obseriot';
+
+    let tag = this;
+    tag.disabled = true;
+    tag.add = add;
+    tag.keyup = keyup;
+
+    function add(e) {
+      e.preventDefault();
+
+      let input = tag.refs.input;
+      obseriot.notify(action.todo.add, input.value);
+
+      input.value = '';
+    }
+
+    function keyup(e) {
+      tag.disabled = e.target.value === '';
+    }
+  </script>
+
+  <style>
+  </style>
+</todo-input>
