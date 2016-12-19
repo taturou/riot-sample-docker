@@ -1,12 +1,31 @@
 <app>
-  <h1>Riot.js TODO</h1>
+  <section class="hero is-fullheight">
+    <!-- Hero: header -->
+    <div class="hero-head">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          Riot.js TODO
+        </h1>
+      </div>
+    </div>
 
-  <div>
-    <todo-list></todo-list>
-  </div>
-  <div>
-    <todo-input></todo-input>
-  </div>
+    <!-- Hero: content -->
+    <div class="hero-body">
+      <div class="is-direction-column">
+        <div>
+          <todo-list></todo-list>
+        </div>
+        <div>
+          <todo-input></todo-input>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero: footer -->
+    <div class="hero-foot is-primary">
+      footer
+    </div>
+  </section>
 
   <script>
     let tag = this;
@@ -21,6 +40,11 @@
     }
     h1 {
       color: var(--riot-color);
+    }
+    .is-direction-column {
+      flex: 0 0 auto;
+      -webkit-flex-direction: column;
+              flex-direction: column;
     }
   </style>
 </app>
