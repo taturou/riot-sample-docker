@@ -1,0 +1,17 @@
+<todo-gc>
+  <button onclick={ gc }>
+    Clear done
+  </button>
+
+  <script>
+    import action from '../lib/action'
+    import obseriot from 'obseriot';
+
+    let tag = this;
+    tag.gc = gc;
+
+    function gc() {
+      obseriot.notify(action.todo.gc);
+    }
+  </script>
+</todo-gc>

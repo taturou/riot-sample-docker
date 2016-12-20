@@ -14,11 +14,14 @@
         </main>
       </div>
       <nav class="nav">
-        <div class="total">
+        <div class="num-total">
           total: <todo-num-total></todo-num-total>
         </div>
-        <div class="done">
+        <div class="num-done">
           done: <todo-num-done></todo-num-done>
+        </div>
+        <div class="gc">
+          <todo-gc></todo-gc>
         </div>
       </nav>
     </div>
@@ -94,8 +97,9 @@
       background: var(--color-grey-lighter);
     }
 
-    .total,
-    .done {
+    .num-total,
+    .num-done,
+    .gc {
       margin-top: 1em;
       margin-bottom: 1em;
     }

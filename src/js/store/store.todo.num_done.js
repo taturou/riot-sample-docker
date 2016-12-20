@@ -11,12 +11,21 @@ store_todo.num_done = {
   }
 }
 
-obseriot.listen(action.todo.item.update, (item) => {
+function num_done() {
   let num_done = 0;
+
   store_todo.items.forEach((item, i, items) => {
     if (item.done) {
       num_done = num_done + 1;
     }
   });
-  obseriot.notify(store_todo.num_done, num_done);
-})
+  return num_done;
+}
+
+obseriot.listen(action.todo.item.update, (_item) => {
+  obseriot.notify(store_todo.num_done, num_done());
+});
+
+obseriot.listen(action.todo.gc, () => {
+  obseriot.notify(store_todo.num_done, num_done());
+});

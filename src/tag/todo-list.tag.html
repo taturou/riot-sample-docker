@@ -9,7 +9,7 @@
     let tag = this;
     tag.items = [];
 
-    obseriot.listen(store.todo.list, (items, item) => {
+    obseriot.listen(store.todo.list, (items) => {
       tag.items = items;
       tag.update();
     });
