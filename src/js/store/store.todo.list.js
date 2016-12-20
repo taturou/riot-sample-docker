@@ -2,9 +2,9 @@ import store_todo from './store.todo'
 import action from '../../lib/action'
 import obseriot from 'obseriot';
 
-store_todo.added = {
+store_todo.list = {
   handler: {
-    name: 'store_todo_added',
+    name: 'store_todo_list',
     action: (item) => {
       return [ store_todo.items, item ];
     }
@@ -14,5 +14,5 @@ store_todo.added = {
 obseriot.listen(action.todo.add, (item) => {
   item.id = store_todo.items.length;
   store_todo.items.push(item);
-  obseriot.notify(store_todo.added, item);
+  obseriot.notify(store_todo.list, item);
 })

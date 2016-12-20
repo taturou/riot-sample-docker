@@ -1,0 +1,17 @@
+<todo-num-done>
+  <span>
+    { done }
+  </span>
+
+  <script>
+    import store from '../lib/store'
+    import obseriot from 'obseriot';
+    let tag = this;
+    tag.done = 0;
+
+    obseriot.listen(store.todo.num_done, (done) => {
+      tag.done = done;
+      tag.update();
+    });
+  </script>
+</todo-num-done>

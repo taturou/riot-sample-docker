@@ -14,6 +14,12 @@
         </main>
       </div>
       <nav class="nav">
+        <div class="total">
+          total: <todo-num-total></todo-num-total>
+        </div>
+        <div class="done">
+          done: <todo-num-done></todo-num-done>
+        </div>
       </nav>
     </div>
 
@@ -81,9 +87,17 @@
     }
 
     .nav {
+      display: flex;
+      flex-direction: column;
       order: -1;
       width: 200px;
       background: var(--color-grey-lighter);
+    }
+
+    .total,
+    .done {
+      margin-top: 1em;
+      margin-bottom: 1em;
     }
 
     .scroll {
