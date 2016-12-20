@@ -1,50 +1,98 @@
 <app>
-  <section class="hero is-fullheight">
-    <!-- Hero: header -->
-    <div class="hero-head">
-      <div class="container has-text-centered">
-        <h1 class="title">
-          Riot.js TODO
-        </h1>
-      </div>
-    </div>
+  <section>
+    <header>
+      Riot.js TODO
+    </header>
 
-    <!-- Hero: content -->
-    <div class="hero-body">
-      <div class="is-direction-column">
-        <div>
-          <todo-list></todo-list>
-        </div>
-        <div>
+    <div class="hsplit">
+      <div class="vsplit">
+        <div class="input">
           <todo-input></todo-input>
         </div>
+        <main class="content scroll">
+          <todo-list></todo-list>
+        </main>
       </div>
+      <nav class="nav">
+      </nav>
     </div>
 
-    <!-- Hero: footer -->
-    <div class="hero-foot is-primary">
-      footer
-    </div>
+    <footer>
+      <i class="fa fa-copyright"></i>
+      2016 taturou@gmail.com
+    </footer>
   </section>
 
   <script>
-    let tag = this;
-
-    const str = 'Riot.js';
-    tag.content = `Hello ${str}`;
   </script>
 
   <style>
     :scope {
-      --riot-color: gray;
+      --color-white: #fff;
+      --color-grey: #7a7a7a;
+      --color-grey-light: #b5b5b5;
+      --color-grey-lighter: #dbdbdb;
+      --color-red: #ff3860;
+      --color-turquoise: #00d1b2;
     }
-    h1 {
-      color: var(--riot-color);
+
+    section {
+      display: -webkit-flex;
+      display: flex;
+      min-height: 100vh;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
     }
-    .is-direction-column {
-      flex: 0 0 auto;
-      -webkit-flex-direction: column;
-              flex-direction: column;
+
+    header,
+    footer {
+      width: 100%;
+      color: #fff;
+      flex: 0;
     }
+
+    header {
+      font-size: 2rem;
+      background: var(--color-turquoise);
+    }
+
+    footer {
+      font-size: 1.2rem;
+      background: var(--color-grey);
+    }
+
+    .hsplit {
+      display: flex;
+      flex: 1;
+    }
+
+    .vsplit {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
+    .input {
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .nav {
+      order: -1;
+      width: 200px;
+      background: var(--color-grey-lighter);
+    }
+
+    .scroll {
+      overflow-y: scroll;
+    }
+/*
+    .scroll::-webkit-scrollbar {
+      display: none;
+    }
+*/
   </style>
 </app>
