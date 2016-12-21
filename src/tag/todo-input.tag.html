@@ -28,5 +28,44 @@
   </script>
 
   <style>
+    :scope {
+      --color-white: #fff;
+      --color-grey: #7a7a7a;
+      --color-grey-light: #b5b5b5;
+      --color-grey-lighter: #dbdbdb;
+      --color-red: #ff3860;
+      --color-turquoise: #00d1b2;
+    }
+
+    form {
+      flex: 1;
+      display: flex;
+      background-color: var(--color-grey);
+    }
+
+    input {
+      flex: 1;
+      font-size: 16px;
+      border: 1px solid var(--color-grey);
+    }
+
+    button {
+      font-size: 16px;
+      text-align: center;
+      padding: 5px 10px;
+      color: var(--color-white);;
+      background-color: var(--color-grey);
+      border: 1px solid var(--color-grey);
+    }
+    button:enabled {
+      color: var(--color-white);;
+      background-color: var(--color-grey);
+      border: 1px solid var(--color-grey);
+    }
+    button:disabled {
+      color: var(--color-grey-lighter);;
+      background-color: var(--color-grey-light);
+      border: 1px solid var(--color-grey-light);
+    }
   </style>
 </todo-input>

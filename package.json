@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "rollup -c config/rollup.config.js",
-    "start": "browser-sync start --files 'dist/*, styles/*, index.html' --server"
+    "start": "browser-sync start --files 'dist/*, styles/*, index.html' --server",
+    "now": "now"
   },
   "author": "taturou <taturou@gmail.com>",
   "devDependencies": {
     "browser-sync": "^2.18.5",
-    "bulma": "^0.2.3",
     "now": "^0.37.0",
     "obseriot": "^0.3.5",
     "postcss": "^5.2.6",
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "normalize.css": "^5.0.0",
     "riot": "^3.0.4"
   }
 }

@@ -1,11 +1,11 @@
 <todo-item>
   <div class="item">
-    <div class="checkbox">
-      <input type="checkbox" onclick={ check }>
-    </div>
+    <i class="checkbox fa {fa-check-square-o : item.done} {fa-square-o : !item.done} fa-fw fa-2x" onclick={ check }></i>
+    <!--
     <div class="id">
       (#{ item.id })
     </div>
+    -->
     <div class="content { completed: item.done }" refs="content">
       { item.content }
     </div>
@@ -20,7 +20,7 @@
     tag.check = check;
 
     function check(e) {
-      tag.item.done = e.target.checked;
+      tag.item.done = !tag.item.done;
       obseriot.notify(action.todo.item.update, tag.item);
     }
   </script>
@@ -32,22 +32,26 @@
 
     .item {
       display: flex;
+      -webkit-align-items: baseline;
+              align-items: baseline;
     }
 
     .checkbox {
-      flex: 0;
-      margin: 0.5em;
+      width: 40px;
+      text-align: left;
+      margin-left: 10px;
     }
 
     .id {
       flex: 0;
-      margin: 0.5em;
+      font-size: 2rem;
     }
 
     .content {
       flex: 1;
+      font-size: 2rem;
       text-align: left;
-      margin: 0.5em;
+      margin-left: 10px;
     }
   </style>
 </todo-item>

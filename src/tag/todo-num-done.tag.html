@@ -1,7 +1,7 @@
 <todo-num-done>
-  <span>
+  <p>
     { done }
-  </span>
+  </p>
 
   <script>
     import store from '../lib/store'
@@ -14,4 +14,11 @@
       tag.update();
     });
   </script>
+
+  <style>
+    p {
+      display: inline;
+      font-size: 16px;
+    }
+  </style>
 </todo-num-done>
